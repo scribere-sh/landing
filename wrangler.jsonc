@@ -1,0 +1,10 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+
+    // Project Name
+    "name": "scribere-landing",
+
+    // Required Compat stuff
+    "compatibility_date": "2025-02-27",
+    "compatibility_flags": ["nodejs_compat"],
+}

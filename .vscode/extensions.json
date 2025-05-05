@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "svelte.svelte-vscode",
+        "ardenivanov.svelte-intellisense",
+        "dprint.dprint",
+        "fill-labs.dependi",
+        "editorconfig.editorconfig",
+        "usernamehw.errorlens",
+        "yoavbls.pretty-ts-errors"
+    ]
+}

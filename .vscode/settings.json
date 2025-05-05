@@ -1,0 +1,30 @@
+{
+    "editor.defaultFormatter": "dprint.dprint",
+
+    "[svelte]": {
+        // interpret markdown-style h1's as titles to put in the minimap
+        "editor.minimap.markSectionHeaderRegex": "#\\s+(?<label>.*)$",
+        "editor.defaultFormatter": "dprint.dprint"
+    },
+    "[typescript]": {
+        "editor.quickSuggestions": {
+            "strings": "on"
+        },
+        // interpret markdown-style h1's as titles to put in the minimap
+        "editor.minimap.markSectionHeaderRegex": "#\\s+(?<label>.*)$",
+        "editor.defaultFormatter": "dprint.dprint"
+    },
+    "[html]": {
+        // interpret markdown-style h1's as titles to put in the minimap
+        "editor.minimap.markSectionHeaderRegex": "#\\s+(?<label>.*)$",
+        "editor.defaultFormatter": "dprint.dprint"
+    },
+
+    "svelte.enable-ts-plugin": true,
+
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+
+    "eslint.useFlatConfig": true,
+    "eslint.validate": ["javascript", "typescript", "svelte"]
+}

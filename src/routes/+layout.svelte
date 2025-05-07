@@ -23,21 +23,27 @@
 </div>
 
 <style scoped>
-    /* Styles for page-container */
     .page-container {
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* Ensure full height of the viewport */
-        background-color: #000; /* Black background for the page */
-        color: #fff; /* White text for overall page */
+        min-height: 100vh;
+        background-color: #000;
+        color: #fff;
+        overflow: hidden;
     }
 
     nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: #1a1a1a;
         padding: 1rem 2rem;
+        height: 70px;
     }
 
     .logo img {
@@ -66,14 +72,15 @@
         background-color: #f7bfa5;
         color: #000;
         font-weight: 600;
-        margin-left: auto; /* Align to the right */
+        margin-left: auto;
     }
 
-    /* Content container with white background */
     .content-container {
-        background-color: #fff; /* White background for content */
-        color: #000; /* Black text inside the white container */
-        padding: 2rem;
-        flex: 1; /* Allow content to take up remaining space */
+        background-color: #fff;
+        color: #000;
+        flex: 1;
+        overflow-y: scroll;
+        height: 100vh;
+        padding-top: 70px;
     }
 </style>

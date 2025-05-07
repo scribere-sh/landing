@@ -62,16 +62,18 @@
 </section>
 
 <style scoped>
-    /* Container for each section to handle white background */
     .section {
         background-color: #fff;
         color: #000;
         padding: 4rem 2rem;
         text-align: center;
-        margin-bottom: 2rem;
+        height: 100vh;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    /* Section Titles */
     .section-title {
         background-color: #d5fafa;
         display: inline-block;
@@ -81,7 +83,6 @@
         margin-bottom: 1.5rem;
     }
 
-    /* Content inside each section */
     .section-content, .feature p, .pricing-container p {
         max-width: 800px;
         margin: 0 auto;
@@ -107,7 +108,6 @@
         margin-left: 1rem;
     }
 
-    /* For responsiveness: Stack feature items on smaller screens */
     @media (max-width: 768px) {
         .feature-container {
             grid-template-columns: 1fr 1fr;

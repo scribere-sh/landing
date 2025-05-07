@@ -7,7 +7,7 @@
 
 <div class="page-container">
     <nav>
-        <div class="logo"><img src="ScribereLogo.png" alt="Logo"></div>
+        <div class="logo"><img src="ScribereLogo.png" alt="Logo" /></div>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#features">Features</a>
@@ -76,11 +76,18 @@
     }
 
     .content-container {
-        background-color: #fff;
-        color: #000;
         flex: 1;
-        overflow-y: scroll;
+        overflow-y: auto;
         height: 100vh;
         padding-top: 70px;
+        background-color: #000;
+        color: #fff;
+
+        /* Hide scrollbar visually */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .content-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
     }
 </style>

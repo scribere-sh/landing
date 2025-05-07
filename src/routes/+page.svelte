@@ -87,7 +87,6 @@
 
 <style scoped>
     .hero {
-        background-image: url("https://via.placeholder.com/1600x900");
         background-size: cover;
         background-position: center;
         height: 100vh;
@@ -132,8 +131,8 @@
     }
 
     .section {
-        background-color: #fff;
-        color: #000;
+        background-color: #000;
+        color: #fff;
         padding: 4rem 2rem;
         text-align: center;
         height: 100vh;
@@ -144,7 +143,8 @@
     }
 
     .section-title {
-        background-color: #d5fafa;
+        background-color: #000;
+        color: white;
         display: inline-block;
         padding: 0.5rem 2rem;
         border-radius: 8px;

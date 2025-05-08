@@ -8,13 +8,15 @@
 <div class="page-container">
     <nav>
         <div class="logo"><img src="ScribereLogo.png" alt="Logo" /></div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
+        <div class="right-nav">
+            <div class="nav-links">
+                <a href="#about">ABOUT</a>
+                <a href="#features">FEATURES</a>
+                <a href="#pricing">PRICING</a>
+            </div>
+            <a class="go-to-app" rel="external" href="//app.scribere.sh"
+            >GO TO APP</a>
         </div>
-        <a class="go-to-app" rel="external" href="//app.scribere.sh"
-        >GO TO APP</a>
     </nav>
 
     <div class="content-container">
@@ -60,9 +62,10 @@
         text-decoration: none;
         padding: 0.5rem 1rem;
         border-radius: 20px;
-        background-color: #f7bfa5;
-        color: #000;
-        font-weight: 600;
+        color: #fff;
+        font-weight: 800;
+        font-size: 32px;
+        font-family: monospace;
     }
 
     .go-to-app {
@@ -89,5 +92,12 @@
 
     .content-container::-webkit-scrollbar {
         display: none; /* Chrome, Safari, Edge */
+    }
+
+    .right-nav {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-left: auto;
     }
 </style>

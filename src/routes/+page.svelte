@@ -87,6 +87,7 @@
 
 <style scoped>
     .hero {
+        background-image: url("/Hero-BG.png");
         background-size: cover;
         background-position: center;
         height: 100vh;
@@ -103,15 +104,15 @@
     }
 
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 97px;
         font-weight: 300;
         line-height: 1.2;
         margin-bottom: 1.5rem;
-        font-family: sans-serif;
+        font-family: monospace;
     }
 
     .hero-content h1 strong {
-        font-size: 3.5rem;
+        font-size: 97px;
         font-weight: 700;
     }
 

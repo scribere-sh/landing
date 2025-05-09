@@ -1,5 +1,13 @@
 <script lang="ts">
-    // Placeholder for any future page-specific logic or TypeScript features
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+            history.replaceState(null, "", "#home");
+        }
+        window.scrollTo(0, 0);
+    });
 </script>
 
 <!-- HERO SECTION -->
@@ -79,8 +87,13 @@
 
 <!-- STATIC "BACK TO TOP" BUTTON -->
 <button
+    type="button"
     class="back-to-top"
-    on:click={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    onclick={() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.location.hash = "home";
+    }}
+    aria-label="Back to top"
 >
     Back to Top
 </button>
@@ -124,11 +137,12 @@
         border-radius: 8px;
         font-weight: bold;
         text-decoration: none;
-        transition: background-color 0.3s;
+        transition: background-color 0.1s ease-in-out;
     }
 
     .hero-button:hover {
-        background-color: #bfeff5;
+        background-color: #edc9ff;
+        text-decoration: underline;
     }
 
     .section {
@@ -175,6 +189,26 @@
         border-radius: 8px;
     }
 
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #f7bfa5;
+        color: #000;
+        border: none;
+        padding: 0.75rem 1.25rem;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.1s ease-in-out;
+    }
+
+    .back-to-top:hover {
+        background-color: #edc9ff;
+    }
+
     ul {
         margin-left: 1rem;
         text-align: left;
@@ -207,25 +241,5 @@
         .hero-content h1 strong {
             font-size: 2.2rem;
         }
-    }
-
-    .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #f7bfa5;
-        color: #000;
-        border: none;
-        padding: 0.75rem 1.25rem;
-        border-radius: 8px;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 999;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        transition: background-color 0.2s ease;
-    }
-
-    .back-to-top:hover {
-        background-color: #e0a88d;
     }
 </style>

@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    /* SCROLL BACK ON RELOAD */
+    /*import { onMount } from "svelte";
 
     onMount(() => {
         if ("scrollRestoration" in history) {
@@ -7,7 +8,7 @@
             history.replaceState(null, "", "#home");
         }
         window.scrollTo(0, 0);
-    });
+    });*/
 </script>
 
 <!-- HERO SECTION -->
@@ -15,7 +16,7 @@
     <div class="hero-content">
         <h1>
             <span>Collaboration</span>
-            <br />
+            <br>
             <strong>Redefined</strong>
         </h1>
         <a class="hero-button" href="//app.scribere.sh" rel="external"
@@ -25,12 +26,24 @@
 
 <!-- ABOUT SECTION -->
 <section id="about" class="section">
-    <h2 class="section-title">ABOUT</h2>
-    <p class="section-content">
-        Scribere is a cutting-edge collaborative document editing platform
-        designed to revolutionize knowledge sharing and teamwork within
-        organizations...
-    </p>
+    <div class="about">
+        <h1>
+            <span>About</span>
+            <br>
+            <strong>Scribere</strong>
+        </h1>
+        <p class="section-content">
+            Scribere is a cutting-edge collaborative document editing platform
+            designed to revolutionize knowledge sharing and teamwork within
+            organizations. Unlike many existing platfoms that fail to balance
+            ease of use, security, and real-time workflow integration, Scribere
+            excels in all three.
+            <br>With a secure, efficient, and intuitive workspace, it enables
+            teams to effortlessly create, edit, and manage documents together in
+            real time—boosting productivity, enhancing collaboration, and
+            ensuring seamless workflow integration across your organization.
+        </p>
+    </div>
 </section>
 
 <!-- FEATURES SECTION -->
@@ -43,7 +56,7 @@
         </div>
         <div class="feature">
             <strong>ONLINE STATUS</strong>
-            <p>See who's online and what they’re working on.</p>
+            <p>See who's online and what they're working on.</p>
         </div>
         <div class="feature">
             <strong>FILE DOWNLOAD</strong>
@@ -69,12 +82,12 @@
     <h2 class="section-title">PRICING</h2>
     <div class="pricing-container">
         <p><strong>Monthly</strong></p>
-        <p><strong>Free Individual</strong> – Limited private space</p>
+        <p><strong>Free Individual</strong> - Limited private space</p>
         <p><strong>Paid:</strong></p>
         <ul>
-            <li>Tier 1 – 5 Spaces – 5 users max ($29/month)</li>
-            <li>Tier 2 – 10 Spaces – 20 users max ($78/month)</li>
-            <li>Tier 3 – 20 Spaces – 100 users max ($199/month)</li>
+            <li>Tier 1 - 5 Spaces - 5 users max ($29/month)</li>
+            <li>Tier 2 - 10 Spaces - 20 users max ($78/month)</li>
+            <li>Tier 3 - 20 Spaces - 100 users max ($199/month)</li>
         </ul>
         <p>
             <strong>Additional Charges:</strong>
@@ -109,6 +122,30 @@
         align-items: center;
         text-align: left;
         padding: 0 5%;
+    }
+
+    .about {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        padding: 0 5%;
+    }
+
+    .about h1 {
+        font-size: 39px;
+        font-weight: 200;
+        line-height: 1.2;
+        margin-bottom: 24px;
+        font-family: monospace;
+    }
+
+    .about h1 strong {
+        font-size: 39px;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        font-family: monospace;
     }
 
     .hero-content {
@@ -148,7 +185,7 @@
     .section {
         background-color: #000;
         color: #fff;
-        padding: 4rem 2rem;
+        padding: 64px 32px;
         text-align: center;
         height: 100vh;
         scroll-snap-align: start;
@@ -161,9 +198,9 @@
         background-color: #000;
         color: white;
         display: inline-block;
-        padding: 0.5rem 2rem;
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
+        padding: 8px 32px;
+        border-radius: 10px;
+        margin-bottom: 12px;
     }
 
     .section-content, .feature p, .pricing-container p {
@@ -176,7 +213,7 @@
     .feature-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        gap: 16px;
         max-width: 900px;
         margin: 0 auto;
     }
@@ -184,7 +221,7 @@
     .feature {
         background-color: #000;
         color: #fff;
-        padding: 1rem;
+        padding: 16px;
         border: 1px solid #ccc;
         border-radius: 8px;
     }
@@ -207,6 +244,7 @@
 
     .back-to-top:hover {
         background-color: #edc9ff;
+        text-decoration: underline;
     }
 
     ul {

@@ -57,11 +57,13 @@
         align-items: center;
         background-color: #1a1a1a;
         padding: 1rem 2rem;
-        height: 70px;
+        height: 138px;
     }
 
     .logo img {
-        width: 150px;
+        width: 220;
+        height: 300;
+        margin-left: 60px;
     }
 
     .nav-links {

@@ -7,7 +7,19 @@
 
 <div class="page-container">
     <nav>
-        <div class="logo"><img src="ScribereLogo.png" alt="Logo" /></div>
+        <button
+            type="button"
+            class="logo"
+            onclick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.location.hash = "home";
+            }}
+            style="background: none; border: none; padding: 0; cursor: pointer"
+            aria-label="Scroll to top and go to home"
+        >
+            <img src="ScribereLogo.png" alt="Scribere Logo" />
+        </button>
+
         <div class="right-nav">
             <div class="nav-links">
                 <a href="#about">ABOUT</a>
@@ -53,29 +65,48 @@
     }
 
     .nav-links {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        color: #fff;
+        font-weight: 100;
+        font-size: 32px;
+        font-family: monospace;
+        transition: all 0.1s ease-in-out;
     }
 
     .nav-links a {
         text-decoration: none;
-        padding: 0.5rem 1rem;
+        padding: 8px 16px;
         border-radius: 20px;
         color: #fff;
-        font-weight: 800;
+        font-weight: 100;
         font-size: 32px;
         font-family: monospace;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .nav-links a:hover {
+        font-weight: 800;
+        text-decoration: underline;
     }
 
     .go-to-app {
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        background-color: #f7bfa5;
+        display: inline-block;
+        background-color: #dff9ff;
         color: #000;
-        font-weight: 600;
-        margin-left: auto;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.1s ease-in-out;
+        margin-left: 1rem;
+        white-space: nowrap;
+    }
+
+    .go-to-app:hover {
+        background-color: #edc9ff;
+        text-decoration: underline;
     }
 
     .content-container {
@@ -87,7 +118,7 @@
         color: #fff;
 
         /* Hide scrollbar visually */
-        scrollbar-width: none; /* Firefox */
+        scrollbar-width: none;
     }
 
     .content-container::-webkit-scrollbar {

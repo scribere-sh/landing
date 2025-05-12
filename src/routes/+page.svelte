@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    /* SCROLL BACK ON RELOAD */
+    /*import { onMount } from "svelte";
 
     onMount(() => {
         if ("scrollRestoration" in history) {
@@ -7,7 +8,7 @@
             history.replaceState(null, "", "#home");
         }
         window.scrollTo(0, 0);
-    });
+    });*/
 </script>
 
 <!-- HERO SECTION -->
@@ -15,7 +16,7 @@
     <div class="hero-content">
         <h1>
             <span>Collaboration</span>
-            <br />
+            <br>
             <strong>Redefined</strong>
         </h1>
         <a class="hero-button" href="//app.scribere.sh" rel="external"
@@ -24,13 +25,33 @@
 </section>
 
 <!-- ABOUT SECTION -->
-<section id="about" class="section">
-    <h2 class="section-title">ABOUT</h2>
-    <p class="section-content">
-        Scribere is a cutting-edge collaborative document editing platform
-        designed to revolutionize knowledge sharing and teamwork within
-        organizations...
-    </p>
+<section id="about" class="about-section">
+    <div class="about-wave-bg">
+        <div class="about-container">
+            <h2 class="about-title">
+                <span>About</span>
+                <br />
+                <strong>Scribere</strong>
+            </h2>
+            <p class="about-description">
+                Scribere is a cutting-edge <strong>collaborative</strong>
+                document editing platform designed to revolutionize
+                <strong>knowledge sharing</strong> and <strong>teamwork</strong>
+                within organizations. Unlike many existing platforms that fail
+                to balance ease of use, <strong>security</strong>, and real-time
+                <strong>workflow integration</strong>, Scribere excels in all
+                three.
+                <br>
+                <br>
+                With a <strong>secure</strong>, <strong>efficient</strong>, and
+                <strong>intuitive workspace</strong>, it enables teams to
+                effortlessly create, edit, and manage documents together in real
+                time—boosting <strong>productivity</strong>, enhancing
+                <strong>collaboration</strong>, and ensuring seamless workflow
+                <strong>integration</strong> across your organization.
+            </p>
+        </div>
+    </div>
 </section>
 
 <!-- FEATURES SECTION -->
@@ -43,7 +64,7 @@
         </div>
         <div class="feature">
             <strong>ONLINE STATUS</strong>
-            <p>See who's online and what they’re working on.</p>
+            <p>See who's online and what they're working on.</p>
         </div>
         <div class="feature">
             <strong>FILE DOWNLOAD</strong>
@@ -69,12 +90,12 @@
     <h2 class="section-title">PRICING</h2>
     <div class="pricing-container">
         <p><strong>Monthly</strong></p>
-        <p><strong>Free Individual</strong> – Limited private space</p>
+        <p><strong>Free Individual</strong> - Limited private space</p>
         <p><strong>Paid:</strong></p>
         <ul>
-            <li>Tier 1 – 5 Spaces – 5 users max ($29/month)</li>
-            <li>Tier 2 – 10 Spaces – 20 users max ($78/month)</li>
-            <li>Tier 3 – 20 Spaces – 100 users max ($199/month)</li>
+            <li>Tier 1 - 5 Spaces - 5 users max ($29/month)</li>
+            <li>Tier 2 - 10 Spaces - 20 users max ($78/month)</li>
+            <li>Tier 3 - 20 Spaces - 100 users max ($199/month)</li>
         </ul>
         <p>
             <strong>Additional Charges:</strong>
@@ -148,7 +169,7 @@
     .section {
         background-color: #000;
         color: #fff;
-        padding: 4rem 2rem;
+        padding: 64px 32px;
         text-align: center;
         height: 100vh;
         scroll-snap-align: start;
@@ -161,12 +182,12 @@
         background-color: #000;
         color: white;
         display: inline-block;
-        padding: 0.5rem 2rem;
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
+        padding: 8px 32px;
+        border-radius: 10px;
+        margin-bottom: 12px;
     }
 
-    .section-content, .feature p, .pricing-container p {
+    .feature p, .pricing-container p {
         max-width: 800px;
         margin: 0 auto;
         line-height: 1.6;
@@ -176,7 +197,7 @@
     .feature-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        gap: 16px;
         max-width: 900px;
         margin: 0 auto;
     }
@@ -184,7 +205,7 @@
     .feature {
         background-color: #000;
         color: #fff;
-        padding: 1rem;
+        padding: 16px;
         border: 1px solid #ccc;
         border-radius: 8px;
     }
@@ -205,8 +226,59 @@
         transition: background-color 0.1s ease-in-out;
     }
 
+    .about-section {
+        background-color: #2e3f4f;
+        color: #fff;
+        position: relative;
+        height: 100vh;
+        scroll-snap-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        overflow: hidden;
+    }
+
+    .about-wave-bg {
+        background-image: url("/Wave1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-container {
+        max-width: 900px;
+        padding: 2rem;
+        text-align: left;
+    }
+
+    .about-title {
+        font-size: 42px;
+        font-weight: 300;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+        font-family: sans-serif;
+    }
+
+    .about-title strong {
+        font-weight: 600;
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+        line-height: 1.75;
+        font-family: "Segoe UI", sans-serif;
+        color: #f1f1f1;
+    }
+
     .back-to-top:hover {
         background-color: #edc9ff;
+        text-decoration: underline;
     }
 
     ul {

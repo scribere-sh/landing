@@ -55,13 +55,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #1a1a1a;
-        padding: 1rem 2rem;
-        height: 70px;
+        background-color: #495867;
+        padding: 16px 32px;
+        height: 120px;
     }
 
     .logo img {
-        width: 150px;
+        width: 160px;
+        height: 60;
+        margin-left: 60px;
     }
 
     .nav-links {

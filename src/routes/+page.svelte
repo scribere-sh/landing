@@ -25,24 +25,32 @@
 </section>
 
 <!-- ABOUT SECTION -->
-<section id="about" class="section">
-    <div class="about">
-        <h1>
-            <span>About</span>
-            <br>
-            <strong>Scribere</strong>
-        </h1>
-        <p class="section-content">
-            Scribere is a cutting-edge collaborative document editing platform
-            designed to revolutionize knowledge sharing and teamwork within
-            organizations. Unlike many existing platfoms that fail to balance
-            ease of use, security, and real-time workflow integration, Scribere
-            excels in all three.
-            <br>With a secure, efficient, and intuitive workspace, it enables
-            teams to effortlessly create, edit, and manage documents together in
-            real time—boosting productivity, enhancing collaboration, and
-            ensuring seamless workflow integration across your organization.
-        </p>
+<section id="about" class="about-section">
+    <div class="about-wave-bg">
+        <div class="about-container">
+            <h2 class="about-title">
+                <span>About</span>
+                <br />
+                <strong>Scribere</strong>
+            </h2>
+            <p class="about-description">
+                Scribere is a cutting-edge <strong>collaborative</strong>
+                document editing platform designed to revolutionize
+                <strong>knowledge sharing</strong> and <strong>teamwork</strong>
+                within organizations. Unlike many existing platforms that fail
+                to balance ease of use, <strong>security</strong>, and real-time
+                <strong>workflow integration</strong>, Scribere excels in all
+                three.
+                <br>
+                <br>
+                With a <strong>secure</strong>, <strong>efficient</strong>, and
+                <strong>intuitive workspace</strong>, it enables teams to
+                effortlessly create, edit, and manage documents together in real
+                time—boosting <strong>productivity</strong>, enhancing
+                <strong>collaboration</strong>, and ensuring seamless workflow
+                <strong>integration</strong> across your organization.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -124,30 +132,6 @@
         padding: 0 5%;
     }
 
-    .about {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        text-align: left;
-        padding: 0 5%;
-    }
-
-    .about h1 {
-        font-size: 39px;
-        font-weight: 200;
-        line-height: 1.2;
-        margin-bottom: 24px;
-        font-family: monospace;
-    }
-
-    .about h1 strong {
-        font-size: 39px;
-        font-weight: 300;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        font-family: monospace;
-    }
-
     .hero-content {
         color: white;
         max-width: 600px;
@@ -203,7 +187,7 @@
         margin-bottom: 12px;
     }
 
-    .section-content, .feature p, .pricing-container p {
+    .feature p, .pricing-container p {
         max-width: 800px;
         margin: 0 auto;
         line-height: 1.6;
@@ -240,6 +224,56 @@
         z-index: 999;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         transition: background-color 0.1s ease-in-out;
+    }
+
+    .about-section {
+        background-color: #2e3f4f;
+        color: #fff;
+        position: relative;
+        height: 100vh;
+        scroll-snap-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        overflow: hidden;
+    }
+
+    .about-wave-bg {
+        background-image: url("/Wave1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-container {
+        max-width: 900px;
+        padding: 2rem;
+        text-align: left;
+    }
+
+    .about-title {
+        font-size: 42px;
+        font-weight: 300;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+        font-family: sans-serif;
+    }
+
+    .about-title strong {
+        font-weight: 600;
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+        line-height: 1.75;
+        font-family: "Segoe UI", sans-serif;
+        color: #f1f1f1;
     }
 
     .back-to-top:hover {

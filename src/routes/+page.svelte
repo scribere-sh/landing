@@ -1,14 +1,19 @@
 <script lang="ts">
-    /* SCROLL BACK ON RELOAD */
-    /*import { onMount } from "svelte";
+    const features: Record<string, string> = {
+        "Collaboration Tools":
+            "The ability to create and edit documents simultaneously with another user allows for an overall smoother experience.",
+        "Online Status":
+            "The online status feature will show if a user is online and what they're currently working on.",
+        "File Download": "Being able to download files",
+        "Alternative Themes":
+            "Alternative themes allow users to choose whether or not they want to work with light or dark mode, allowing more comfort for late night workers.",
+        "Private Spaces":
+            "The private space gives users the ability to work on their own documents before deciding to share them or not.",
+        "Personal Notes":
+            "The notes feature is to allow users to make small notes whether it's a to-do list or a form of documentation.",
+    };
 
-    onMount(() => {
-        if ("scrollRestoration" in history) {
-            history.scrollRestoration = "manual";
-            history.replaceState(null, "", "#home");
-        }
-        window.scrollTo(0, 0);
-    });*/
+    let selected = Object.keys(features)[0];
 </script>
 
 <!-- HERO SECTION -->
@@ -16,7 +21,7 @@
     <div class="hero-content">
         <h1>
             <span>Collaboration</span>
-            <br>
+            <br />
             <strong>Redefined</strong>
         </h1>
         <a class="hero-button" href="//app.scribere.sh" rel="external"
@@ -34,53 +39,52 @@
                 <strong>Scribere</strong>
             </h2>
             <p class="about-description">
-                Scribere is a cutting-edge <strong>collaborative</strong>
-                document editing platform designed to revolutionize
-                <strong>knowledge sharing</strong> and <strong>teamwork</strong>
-                within organizations. Unlike many existing platforms that fail
-                to balance ease of use, <strong>security</strong>, and real-time
-                <strong>workflow integration</strong>, Scribere excels in all
-                three.
-                <br>
-                <br>
-                With a <strong>secure</strong>, <strong>efficient</strong>, and
-                <strong>intuitive workspace</strong>, it enables teams to
-                effortlessly create, edit, and manage documents together in real
-                time—boosting <strong>productivity</strong>, enhancing
-                <strong>collaboration</strong>, and ensuring seamless workflow
-                <strong>integration</strong> across your organization.
+                <strong>Scribere is a cutting-edge collaborative document
+                    editing platform designed to revolutionize knowledge sharing
+                    and teamwork within organizations. Unlike many existing
+                    platforms that fail to balance ease of use, security, and
+                    real-time workflow integration, Scribere excels in all
+                    three. <br>
+                    With a secure, efficient, and intuitive workspace, it
+                    enables teams to effortlessly create, edit, and manage
+                    documents together in real time—boosting productivity,
+                    enhancing collaboration, and ensuring seamless workflow
+                    integration across your organization.
+                </strong>
             </p>
         </div>
     </div>
 </section>
 
 <!-- FEATURES SECTION -->
-<section id="features" class="section">
-    <h2 class="section-title">FEATURES</h2>
-    <div class="feature-container">
-        <div class="feature">
-            <strong>COLLABORATION TOOLS</strong>
-            <p>Real-time editing and communication.</p>
-        </div>
-        <div class="feature">
-            <strong>ONLINE STATUS</strong>
-            <p>See who's online and what they're working on.</p>
-        </div>
-        <div class="feature">
-            <strong>FILE DOWNLOAD</strong>
-            <p>Download important documents for offline use.</p>
-        </div>
-        <div class="feature">
-            <strong>ALTERNATIVE THEMES</strong>
-            <p>Customize your interface with theme options.</p>
-        </div>
-        <div class="feature">
-            <strong>PERSONAL NOTES</strong>
-            <p>Private annotations and quick notes.</p>
-        </div>
-        <div class="feature">
-            <strong>PRIVATE SPACES</strong>
-            <p>Secure workspaces for departments or projects.</p>
+<section id="features" class="features-section">
+    <div class="features-wave-bg">
+        <div class="features-container">
+            <h2 class="features-title">
+                <span>Special</span>
+                <br />
+                <strong>Features</strong>
+            </h2>
+
+            <div class="features-content">
+                <ul class="features-list">
+                    {#each Object.keys(features) as feature (feature)}
+                        <li>
+                            <button
+                                class:selected={selected === feature}
+                                onclick={() => (selected =
+                                feature)}
+                            >
+                                {feature}
+                            </button>
+                        </li>
+                    {/each}
+                </ul>
+
+                <div class="feature-description">
+                    {features[selected]}
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -106,7 +110,7 @@
     </div>
 </section>
 
-<!-- STATIC "BACK TO TOP" BUTTON -->
+<!-- BACK TO TOP -->
 <button
     type="button"
     class="back-to-top"
@@ -128,7 +132,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        text-align: left;
         padding: 0 5%;
     }
 
@@ -140,18 +143,16 @@
     .hero-content h1 {
         font-size: 97px;
         font-weight: 300;
+        font-family: monospace;
         line-height: 1.2;
         margin-bottom: 1.5rem;
-        font-family: monospace;
     }
 
     .hero-content h1 strong {
-        font-size: 97px;
         font-weight: 700;
     }
 
     .hero-button {
-        display: inline-block;
         background-color: #dff9ff;
         color: #000;
         padding: 0.75rem 1.5rem;
@@ -172,7 +173,6 @@
         padding: 64px 32px;
         text-align: center;
         height: 100vh;
-        scroll-snap-align: start;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -187,27 +187,11 @@
         margin-bottom: 12px;
     }
 
-    .feature p, .pricing-container p {
+    .pricing-container p {
         max-width: 800px;
         margin: 0 auto;
         line-height: 1.6;
         font-family: sans-serif;
-    }
-
-    .feature-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .feature {
-        background-color: #000;
-        color: #fff;
-        padding: 16px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
     }
 
     .back-to-top {
@@ -226,7 +210,13 @@
         transition: background-color 0.1s ease-in-out;
     }
 
-    .about-section {
+    .back-to-top:hover {
+        background-color: #edc9ff;
+        text-decoration: underline;
+    }
+
+    /* ABOUT SECTION */
+    .about-section, .features-section {
         background-color: #2e3f4f;
         color: #fff;
         position: relative;
@@ -239,7 +229,7 @@
         overflow: hidden;
     }
 
-    .about-wave-bg {
+    .about-wave-bg, .features-wave-bg {
         background-image: url("/Wave1.png");
         background-size: cover;
         background-repeat: no-repeat;
@@ -257,7 +247,7 @@
         text-align: left;
     }
 
-    .about-title {
+    .about-title, .features-title {
         font-size: 42px;
         font-weight: 300;
         line-height: 1.3;
@@ -265,53 +255,82 @@
         font-family: sans-serif;
     }
 
-    .about-title strong {
+    .about-title strong, .features-title strong {
         font-weight: 600;
     }
 
-    .about-description {
+    .about-description, .feature-description {
         font-size: 1.1rem;
         line-height: 1.75;
         font-family: "Segoe UI", sans-serif;
         color: #f1f1f1;
     }
 
-    .back-to-top:hover {
-        background-color: #edc9ff;
-        text-decoration: underline;
+    .features-container {
+        max-width: 1000px;
+        padding: 2rem;
+        text-align: left;
+    }
+
+    .features-content {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 250px;
+    }
+
+    .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .features-list button {
+        background: none;
+        border: none;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 8px;
+        color: #fff;
+        text-align: left;
+        font-weight: 500;
+        min-width: 180px;
+        transition: background-color 0.2s ease;
+    }
+
+    .features-list button:hover, .features-list button.selected {
+        background-color: #f7bfa5;
+        color: #000;
+        font-weight: 500;
+    }
+
+    .feature-description {
+        width: 400px;
+        min-height: 140px;
+        transition: opacity 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .features-content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-description {
+            text-align: center;
+        }
     }
 
     ul {
         margin-left: 1rem;
         text-align: left;
         display: inline-block;
-    }
-
-    @media (max-width: 768px) {
-        .feature-container {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .hero-content h1 {
-            font-size: 2.2rem;
-        }
-
-        .hero-content h1 strong {
-            font-size: 2.7rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .feature-container {
-            grid-template-columns: 1fr;
-        }
-
-        .hero-content h1 {
-            font-size: 1.8rem;
-        }
-
-        .hero-content h1 strong {
-            font-size: 2.2rem;
-        }
     }
 </style>

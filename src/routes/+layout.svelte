@@ -57,12 +57,12 @@
         align-items: center;
         background-color: #495867;
         padding: 16px 32px;
-        height: 120px;
+        height: 138px;
     }
 
     .logo img {
-        width: 160px;
-        height: 60;
+        width: 318px;
+        height: 119px;
         margin-left: 60px;
     }
 

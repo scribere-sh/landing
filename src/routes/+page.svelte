@@ -14,6 +14,34 @@
     };
 
     let selected = Object.keys(features)[0];
+
+    const plans = [
+        {
+            id: "free",
+            tier: "Free Tier",
+            description:
+                "A free individual plan that is limited to private spaces",
+            price: "$0.00",
+        },
+        {
+            id: "tier1",
+            tier: "Tier 1",
+            description: "5 Spaces\nLimited to 5 users",
+            price: "$29.00",
+        },
+        {
+            id: "tier2",
+            tier: "Tier 2",
+            description: "10 Spaces Each\nLimited to 20 users",
+            price: "$78.00",
+        },
+        {
+            id: "tier3",
+            tier: "Tier 3",
+            description: "20 Spaces Each\nLimited to 100 users",
+            price: "$199.00",
+        },
+    ];
 </script>
 
 <!-- HERO SECTION -->
@@ -31,7 +59,7 @@
 
 <!-- ABOUT SECTION -->
 <section id="about" class="about-section">
-    <div class="about-wave-bg">
+    <div class="wave-bg">
         <div class="about-container">
             <h2 class="about-title">
                 <span>About</span>
@@ -44,13 +72,12 @@
                     and teamwork within organizations. Unlike many existing
                     platforms that fail to balance ease of use, security, and
                     real-time workflow integration, Scribere excels in all
-                    three. <br>
+                    three.<br>
                     With a secure, efficient, and intuitive workspace, it
                     enables teams to effortlessly create, edit, and manage
                     documents together in real time—boosting productivity,
                     enhancing collaboration, and ensuring seamless workflow
-                    integration across your organization.
-                </strong>
+                    integration across your organization.</strong>
             </p>
         </div>
     </div>
@@ -62,7 +89,7 @@
 
 <!-- FEATURES SECTION -->
 <section id="features" class="features-section">
-    <div class="features-wave-bg">
+    <div class="wave-bg">
         <div class="features-container">
             <h2 class="features-title">
                 <span>Special</span>
@@ -94,23 +121,27 @@
 </section>
 
 <!-- PRICING SECTION -->
-<section id="pricing" class="section">
-    <h2 class="section-title">PRICING</h2>
-    <div class="pricing-container">
-        <p><strong>Monthly</strong></p>
-        <p><strong>Free Individual</strong> - Limited private space</p>
-        <p><strong>Paid:</strong></p>
-        <ul>
-            <li>Tier 1 - 5 Spaces - 5 users max ($29/month)</li>
-            <li>Tier 2 - 10 Spaces - 20 users max ($78/month)</li>
-            <li>Tier 3 - 20 Spaces - 100 users max ($199/month)</li>
-        </ul>
-        <p>
-            <strong>Additional Charges:</strong>
-            <br />
-            $0.20 per extra active user/min over the limit.<br />
-            100 GB extra shared space on all tiers.
-        </p>
+<section id="pricing" class="pricing-section">
+    <div class="wave-bg">
+        <div class="pricing-container">
+            <h2 class="pricing-title">
+                <span>Monthly</span>
+                <br>
+                <strong>Pricing</strong>
+            </h2>
+
+            <div class="pricing-content">
+                <div class="cards">
+                    {#each plans as plan (plan.id)}
+                        <button type="button" class="pricing-card">
+                            <h3>{plan.tier}</h3>
+                            <span class="description">{plan.description}</span>
+                            <span class="price">{plan.price}</span>
+                        </button>
+                    {/each}
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -171,33 +202,6 @@
         text-decoration: underline;
     }
 
-    .section {
-        background-color: #000;
-        color: #fff;
-        padding: 64px 32px;
-        text-align: center;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .section-title {
-        background-color: #000;
-        color: white;
-        display: inline-block;
-        padding: 8px 32px;
-        border-radius: 10px;
-        margin-bottom: 12px;
-    }
-
-    .pricing-container p {
-        max-width: 800px;
-        margin: 0 auto;
-        line-height: 1.6;
-        font-family: sans-serif;
-    }
-
     .back-to-top {
         position: fixed;
         bottom: 20px;
@@ -219,8 +223,7 @@
         text-decoration: underline;
     }
 
-    /* ABOUT SECTION */
-    .about-section, .features-section {
+    .about-section, .features-section, .pricing-section {
         background-color: #2e3f4f;
         color: #fff;
         position: relative;
@@ -233,7 +236,7 @@
         overflow: hidden;
     }
 
-    .about-wave-bg, .features-wave-bg {
+    .wave-bg {
         background-image: url("/Wave1.png");
         background-size: cover;
         background-repeat: no-repeat;
@@ -251,7 +254,7 @@
         text-align: left;
     }
 
-    .about-title, .features-title {
+    .about-title, .features-title, .pricing-title {
         font-size: 42px;
         font-weight: 300;
         line-height: 1.3;
@@ -259,7 +262,7 @@
         font-family: sans-serif;
     }
 
-    .about-title strong, .features-title strong {
+    .about-title strong, .features-title strong, .pricing-title strong {
         font-weight: 600;
     }
 
@@ -353,5 +356,72 @@
         width: 100%;
         height: auto;
         display: block;
+    }
+
+    .pricing-content {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 250px;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .pricing-card {
+        background-color: #e0f9f9;
+        color: #2d3e50;
+        border: none;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        width: 300px;
+        height: 280px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        font-weight: bolder;
+    }
+
+    .pricing-card h3 {
+        font-size: 29px;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 21px;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.3;
+        margin: 0.5rem 0;
+        white-space: pre-wrap;
+    }
+
+    .price {
+        background-color: #f2b8a2;
+        color: #333;
+        font-weight: bolder;
+        font-size: 22px;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
     }
 </style>

@@ -56,6 +56,10 @@
     </div>
 </section>
 
+<div class="banner">
+    <img src="banner.png" alt="Try Scribere Today" />
+</div>
+
 <!-- FEATURES SECTION -->
 <section id="features" class="features-section">
     <div class="features-wave-bg">
@@ -332,5 +336,22 @@
         margin-left: 1rem;
         text-align: left;
         display: inline-block;
+    }
+
+    .banner {
+        width: 100vw;
+        height: 719px;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        overflow: hidden;
+    }
+
+    .banner img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 </style>

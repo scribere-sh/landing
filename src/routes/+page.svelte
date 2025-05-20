@@ -18,27 +18,27 @@
     const plans = [
         {
             id: "free",
-            tier: "Free Tier",
+            tier: "Free Plan",
             description:
                 "A free individual plan that is limited to private spaces",
             price: "$0.00",
         },
         {
             id: "tier1",
-            tier: "Tier 1",
+            tier: "Startup Plan",
             description: "5 Spaces\nLimited to 5 users",
             price: "$29.00",
         },
         {
             id: "tier2",
-            tier: "Tier 2",
-            description: "10 Spaces Each\nLimited to 20 users",
+            tier: "Team Plan",
+            description: "10 Spaces\nLimited to 20 users",
             price: "$78.00",
         },
         {
             id: "tier3",
-            tier: "Tier 3",
-            description: "20 Spaces Each\nLimited to 100 users",
+            tier: "Business Plan",
+            description: "20 Spaces\nLimited to 100 users",
             price: "$199.00",
         },
     ];

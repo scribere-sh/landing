@@ -133,11 +133,11 @@
             <div class="pricing-content">
                 <div class="cards">
                     {#each plans as plan (plan.id)}
-                        <button type="button" class="pricing-card">
+                        <a href="/this-is-a-uni-project" class="pricing-card">
                             <h3>{plan.tier}</h3>
                             <span class="description">{plan.description}</span>
                             <span class="price">{plan.price}</span>
-                        </button>
+                        </a>
                     {/each}
                 </div>
             </div>
@@ -153,9 +153,9 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
         window.location.hash = "home";
     }}
-    aria-label="Back to top"
+    aria-label="^Back to top"
 >
-    Back to Top
+    BACK TO TOP
 </button>
 
 <style scoped>
@@ -177,14 +177,12 @@
 
     .hero-content h1 {
         font-size: 97px;
-        font-weight: 300;
-        font-family: monospace;
         line-height: 1.2;
         margin-bottom: 1.5rem;
     }
 
     .hero-content h1 strong {
-        font-weight: 700;
+        font-weight: 850;
     }
 
     .hero-button {
@@ -241,7 +239,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        width: 100%;
+        width: 120%;
         height: 100%;
         display: flex;
         align-items: center;
@@ -256,20 +254,18 @@
 
     .about-title, .features-title, .pricing-title {
         font-size: 42px;
-        font-weight: 300;
+        font-weight: 400;
         line-height: 1.3;
         margin-bottom: 1.5rem;
-        font-family: sans-serif;
     }
 
     .about-title strong, .features-title strong, .pricing-title strong {
-        font-weight: 600;
+        font-weight: 700;
     }
 
     .about-description, .feature-description {
         font-size: 1.1rem;
         line-height: 1.75;
-        font-family: "Segoe UI", sans-serif;
         color: #f1f1f1;
     }
 
@@ -307,7 +303,7 @@
         border-radius: 8px;
         color: #fff;
         text-align: left;
-        font-weight: 500;
+        font-weight: 300;
         min-width: 180px;
         transition: background-color 0.2s ease;
     }
@@ -315,7 +311,7 @@
     .features-list button:hover, .features-list button.selected {
         background-color: #f7bfa5;
         color: #000;
-        font-weight: 500;
+        font-weight: 300;
     }
 
     .feature-description {
@@ -366,6 +362,10 @@
         justify-content: center;
         align-items: flex-start;
         min-height: 250px;
+    }
+
+    .pricing-content a {
+        text-decoration: none;
     }
 
     .cards {

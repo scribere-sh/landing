@@ -120,6 +120,10 @@
     </div>
 </section>
 
+<section class="banner">
+    <img src="banner2.png" alt="banner2" />
+</section>
+
 <!-- PRICING SECTION -->
 <section id="pricing" class="pricing-section">
     <div class="wave-bg">
@@ -339,7 +343,7 @@
 
     .banner {
         width: 100vw;
-        height: 719px;
+        height: 900px;
         position: relative;
         left: 50%;
         right: 50%;
@@ -350,7 +354,7 @@
 
     .banner img {
         width: 100%;
-        height: auto;
+        height: 900px;
         display: block;
     }
 

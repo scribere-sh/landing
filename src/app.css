@@ -1,8 +1,9 @@
 * {
-    font-family: monospace;
+    font-family: "nexa", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-weight: 500;
 }
 
 html, body {

@@ -5,6 +5,10 @@
     const { children }: LayoutProps = $props();
 </script>
 
+<svelte:head>
+    <link rel="stylesheet" href="https://use.typekit.net/psh5enk.css" />
+</svelte:head>
+
 <div class="page-container">
     <nav>
         <button
@@ -61,8 +65,8 @@
     }
 
     .logo img {
-        width: 318px;
-        height: 119px;
+        width: 310px;
+        height: 110px;
         margin-left: 60px;
     }
 
@@ -70,10 +74,9 @@
         text-decoration: none;
         padding: 8px 16px;
         border-radius: 20px;
-        color: #fff;
         font-weight: 100;
+        color: #fff;
         font-size: 32px;
-        font-family: monospace;
         transition: all 0.1s ease-in-out;
     }
 
@@ -81,15 +84,14 @@
         text-decoration: none;
         padding: 8px 16px;
         border-radius: 20px;
-        color: #fff;
         font-weight: 100;
+        color: #fff;
         font-size: 32px;
-        font-family: monospace;
         transition: all 0.1s ease-in-out;
     }
 
     .nav-links a:hover {
-        font-weight: 800;
+        font-weight: 500;
         text-decoration: underline;
     }
 

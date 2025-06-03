@@ -59,9 +59,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #495867;
+        background-image: linear-gradient(#495867, #2d3740);
         padding: 16px 32px;
-        height: 138px;
+        height: 128px;
     }
 
     .logo img {
@@ -120,13 +120,11 @@
         padding-top: 70px;
         background-color: #000;
         color: #fff;
-
-        /* Hide scrollbar visually */
         scrollbar-width: none;
     }
 
     .content-container::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Edge */
+        display: none;
     }
 
     .right-nav {

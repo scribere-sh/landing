@@ -59,27 +59,24 @@
 
 <!-- ABOUT SECTION -->
 <section id="about" class="about-section">
-    <div class="wave-bg">
-        <div class="about-container">
-            <h2 class="about-title">
-                <span>About</span>
-                <br />
-                <strong>Scribere</strong>
-            </h2>
-            <p class="about-description">
-                <strong>Scribere is a cutting-edge collaborative document
-                    editing platform designed to revolutionize knowledge sharing
-                    and teamwork within organizations. Unlike many existing
-                    platforms that fail to balance ease of use, security, and
-                    real-time workflow integration, Scribere excels in all
-                    three.<br>
-                    With a secure, efficient, and intuitive workspace, it
-                    enables teams to effortlessly create, edit, and manage
-                    documents together in real time—boosting productivity,
-                    enhancing collaboration, and ensuring seamless workflow
-                    integration across your organization.</strong>
-            </p>
-        </div>
+    <div class="about-container">
+        <h2 class="about-title">
+            <span>About</span>
+            <br />
+            <strong>Scribere</strong>
+        </h2>
+        <p class="about-description">
+            <strong>Scribere is a cutting-edge collaborative document editing
+                platform designed to revolutionize knowledge sharing and
+                teamwork within organizations. Unlike many existing platforms
+                that fail to balance ease of use, security, and real-time
+                workflow integration, Scribere excels in all three.<br>
+                With a secure, efficient, and intuitive workspace, it enables
+                teams to effortlessly create, edit, and manage documents
+                together in real time—boosting productivity, enhancing
+                collaboration, and ensuring seamless workflow integration across
+                your organization.</strong>
+        </p>
     </div>
 </section>
 
@@ -89,32 +86,29 @@
 
 <!-- FEATURES SECTION -->
 <section id="features" class="features-section">
-    <div class="wave-bg">
-        <div class="features-container">
-            <h2 class="features-title">
-                <span>Special</span>
-                <br />
-                <strong>Features</strong>
-            </h2>
+    <div class="features-container">
+        <h2 class="features-title">
+            <span>Special</span>
+            <br />
+            <strong>Features</strong>
+        </h2>
 
-            <div class="features-content">
-                <ul class="features-list">
-                    {#each Object.keys(features) as feature (feature)}
-                        <li>
-                            <button
-                                class:selected={selected === feature}
-                                onclick={() => (selected =
-                                feature)}
-                            >
-                                {feature}
-                            </button>
-                        </li>
-                    {/each}
-                </ul>
+        <div class="features-content">
+            <ul class="features-list">
+                {#each Object.keys(features) as feature (feature)}
+                    <li>
+                        <button
+                            class:selected={selected === feature}
+                            onclick={() => (selected = feature)}
+                        >
+                            {feature}
+                        </button>
+                    </li>
+                {/each}
+            </ul>
 
-                <div class="feature-description">
-                    {features[selected]}
-                </div>
+            <div class="feature-description">
+                {features[selected]}
             </div>
         </div>
     </div>
@@ -126,24 +120,22 @@
 
 <!-- PRICING SECTION -->
 <section id="pricing" class="pricing-section">
-    <div class="wave-bg">
-        <div class="pricing-container">
-            <h2 class="pricing-title">
-                <span>Monthly</span>
-                <br>
-                <strong>Pricing</strong>
-            </h2>
+    <div class="pricing-container">
+        <h2 class="pricing-title">
+            <span>Monthly</span>
+            <br>
+            <strong>Pricing</strong>
+        </h2>
 
-            <div class="pricing-content">
-                <div class="cards">
-                    {#each plans as plan (plan.id)}
-                        <a href="/this-is-a-uni-project" class="pricing-card">
-                            <h3>{plan.tier}</h3>
-                            <span class="description">{plan.description}</span>
-                            <span class="price">{plan.price}</span>
-                        </a>
-                    {/each}
-                </div>
+        <div class="pricing-content">
+            <div class="cards">
+                {#each plans as plan (plan.id)}
+                    <a href="/this-is-a-uni-project" class="pricing-card">
+                        <h3>{plan.tier}</h3>
+                        <span class="description">{plan.description}</span>
+                        <span class="price">{plan.price}</span>
+                    </a>
+                {/each}
             </div>
         </div>
     </div>
@@ -225,8 +217,25 @@
         text-decoration: underline;
     }
 
-    .about-section, .features-section, .pricing-section {
-        background-color: #2e3f4f;
+    .about-section, .features-section {
+        background: url("/Wave1.png"), linear-gradient(#4a5e6e, #364552);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #fff;
+        position: relative;
+        scroll-snap-align: start;
+        padding: 260px;
+        overflow: hidden;
+    }
+
+    .pricing-section {
+        background: url("/Wave1.png"), linear-gradient(#4a5e6e, #364552);
+        background-size: cover;
+        background-position: center;
         color: #fff;
         position: relative;
         height: 100vh;
@@ -238,26 +247,14 @@
         overflow: hidden;
     }
 
-    .wave-bg {
-        background-image: url("/Wave1.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 120%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .about-container {
         max-width: 900px;
-        padding: 2rem;
+        padding: 2px;
         text-align: left;
     }
 
     .about-title, .features-title, .pricing-title {
-        font-size: 42px;
+        font-size: 39px;
         font-weight: 400;
         line-height: 1.3;
         margin-bottom: 1.5rem;
@@ -265,6 +262,7 @@
 
     .about-title strong, .features-title strong, .pricing-title strong {
         font-weight: 700;
+        font-size: 65px;
     }
 
     .about-description, .feature-description {
@@ -274,9 +272,12 @@
     }
 
     .features-container {
-        max-width: 1000px;
-        padding: 2rem;
+        max-width: 900px;
+        padding: 2px;
         text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .features-content {
@@ -289,10 +290,30 @@
         min-height: 250px;
     }
 
+    @media (max-width: 768px) {
+        .features-content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-description {
+            text-align: center;
+        }
+    }
+
+    .features-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .features-list button {
+        text-align: center;
+    }
+
     .features-list {
         list-style: none;
-        padding: 0;
-        margin: 0;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
@@ -309,7 +330,7 @@
         text-align: left;
         font-weight: 300;
         min-width: 180px;
-        transition: background-color 0.2s ease;
+        transition: background-color 0.1s ease;
     }
 
     .features-list button:hover, .features-list button.selected {
@@ -319,20 +340,10 @@
     }
 
     .feature-description {
+        display: flex;
         width: 400px;
         min-height: 140px;
         transition: opacity 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-        .features-content {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .feature-description {
-            text-align: center;
-        }
     }
 
     ul {
@@ -343,7 +354,7 @@
 
     .banner {
         width: 100vw;
-        height: 900px;
+        height: 720px;
         position: relative;
         left: 50%;
         right: 50%;
@@ -354,7 +365,7 @@
 
     .banner img {
         width: 100%;
-        height: 900px;
+        height: 720px;
         display: block;
     }
 
@@ -380,21 +391,21 @@
     }
 
     .pricing-card {
-        background-color: #e0f9f9;
-        color: #2d3e50;
-        border: none;
-        border-radius: 0.75rem;
-        padding: 1.5rem;
+        border-radius: 10px;
+        background: #e0f9f9;
+        padding: 2rem;
         width: 300px;
         height: 280px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         text-align: center;
+        box-shadow: 0 0 5px 0px #e0f9f9;
+        text-decoration: none;
+        color: #2d3e50;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .pricing-card:hover {
@@ -406,7 +417,7 @@
     .pricing-card h3 {
         font-size: 29px;
         font-weight: bold;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .description {

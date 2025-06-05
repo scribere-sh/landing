@@ -172,6 +172,7 @@
     </div>
 </section>
 
+<!-- LEGAL FOOTER -->
 <footer class="legal-footer">
     <div class="footer-container">
         <p>&copy; {new Date().getFullYear()} Scribere. All rights reserved.</p>
@@ -286,7 +287,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
+        padding: 260px;
         overflow: hidden;
     }
 
@@ -303,6 +304,9 @@
         margin-bottom: 1.5rem;
     }
 
+    .pricing-title {
+        padding-top: 10rem;
+    }
     .about-title strong, .features-title strong, .pricing-title strong {
         font-weight: 700;
         font-size: 65px;
@@ -425,7 +429,7 @@
     .pricing-content {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        gap: rem;
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;

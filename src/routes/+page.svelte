@@ -1,20 +1,22 @@
 <script lang="ts">
+    // Features List
     const features: Record<string, string> = {
         "Collaboration Tools":
-            "The ability to create and edit documents simultaneously with another user allows for an overall smoother experience.",
+            "Work together and edit documents simultaneously for faster, smoother teamwork.",
         "Online Status":
-            "The online status feature will show if a user is online and what they're currently working on.",
-        "File Download": "Being able to download files",
+            "Know who's online and what they're working on. Streamline communication and boost productivity.",
+        "File Download":
+            "Instantly download your files anytime, anywhere. No delays, no hassle.",
         "Alternative Themes":
-            "Alternative themes allow users to choose whether or not they want to work with light or dark mode, allowing more comfort for late night workers.",
+            "Customize your experience with multiple themes tailored to your style and comfort.",
         "Private Spaces":
-            "The private space gives users the ability to work on their own documents before deciding to share them or not.",
-        "Personal Notes":
-            "The notes feature is to allow users to make small notes whether it's a to-do list or a form of documentation.",
+            "Stay in control with secure private spaces. Your documents, your eyes only.",
     };
 
+    // Default selected feature
     let selected = Object.keys(features)[0];
 
+    // Subcription Plans
     const plans = [
         {
             id: "free",
@@ -42,6 +44,15 @@
             price: "$199.00",
         },
     ];
+    const enterprise = [
+        {
+            id: "enterprise",
+            tier: "Enterprise Plans",
+            description:
+                "For custom plans, please get in touch with our sales team",
+            price: "Get in Touch",
+        },
+    ];
 </script>
 
 <!-- HERO SECTION -->
@@ -62,7 +73,7 @@
     <div class="about-container">
         <h2 class="about-title">
             <span>About</span>
-            <br />
+            <br>
             <strong>Scribere</strong>
         </h2>
         <p class="about-description">
@@ -70,7 +81,8 @@
                 platform designed to revolutionize knowledge sharing and
                 teamwork within organizations. Unlike many existing platforms
                 that fail to balance ease of use, security, and real-time
-                workflow integration, Scribere excels in all three.<br>
+                workflow integration, Scribere excels in all three.<br><br>
+
                 With a secure, efficient, and intuitive workspace, it enables
                 teams to effortlessly create, edit, and manage documents
                 together in real time—boosting productivity, enhancing
@@ -80,6 +92,7 @@
     </div>
 </section>
 
+<!-- BANNER ONE -->
 <div class="banner">
     <img src="banner.png" alt="Try Scribere Today" />
 </div>
@@ -94,6 +107,7 @@
         </h2>
 
         <div class="features-content">
+            <!-- Feature List -->
             <ul class="features-list">
                 {#each Object.keys(features) as feature (feature)}
                     <li>
@@ -107,6 +121,7 @@
                 {/each}
             </ul>
 
+            <!-- Feature Detail -->
             <div class="feature-description">
                 {features[selected]}
             </div>
@@ -114,7 +129,8 @@
     </div>
 </section>
 
-<section class="banner">
+<!-- BANNER TWO -->
+<section class="banner2">
     <img src="banner2.png" alt="banner2" />
 </section>
 
@@ -138,8 +154,35 @@
                 {/each}
             </div>
         </div>
+        <br>
+        <br>
+        <div class="enterprise-content">
+            <div class="enterprise-cards">
+                {#each enterprise as enterprise (enterprise.id)}
+                    <a href="/this-is-a-uni-project" class="enterprise-card">
+                        <h3>{enterprise.tier}</h3>
+                        <span class="description">{
+                            enterprise.description
+                        }</span>
+                        <span class="price">{enterprise.price}</span>
+                    </a>
+                {/each}
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- LEGAL FOOTER -->
+<footer class="legal-footer">
+    <div class="footer-container">
+        <p>&copy; {new Date().getFullYear()} Scribere. All rights reserved.</p>
+        <nav class="footer-links">
+            <a href="/this-is-a-uni-project">Terms of Service</a>
+            <a href="/this-is-a-uni-project">Privacy Policy</a>
+            <a href="/this-is-a-uni-project">Contact Us</a>
+        </nav>
+    </div>
+</footer>
 
 <!-- BACK TO TOP -->
 <button
@@ -154,6 +197,7 @@
     BACK TO TOP
 </button>
 
+<!-- CSS BELOW -->
 <style scoped>
     .hero {
         background-image: url("/Hero-BG.png");
@@ -243,23 +287,26 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
+        padding: 260px;
         overflow: hidden;
     }
 
     .about-container {
-        max-width: 900px;
+        max-width: 1200px;
         padding: 2px;
         text-align: left;
     }
 
     .about-title, .features-title, .pricing-title {
-        font-size: 39px;
+        font-size: 48px;
         font-weight: 400;
         line-height: 1.3;
         margin-bottom: 1.5rem;
     }
 
+    .pricing-title {
+        padding-top: 10rem;
+    }
     .about-title strong, .features-title strong, .pricing-title strong {
         font-weight: 700;
         font-size: 65px;
@@ -269,11 +316,12 @@
         font-size: 1.1rem;
         line-height: 1.75;
         color: #f1f1f1;
+        font-size: 24px;
     }
 
     .features-container {
-        max-width: 900px;
-        padding: 2px;
+        max-width: 1000px;
+        padding: 5px;
         text-align: left;
         display: flex;
         flex-direction: column;
@@ -305,14 +353,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem;
-    }
-
-    .features-list button {
-        text-align: center;
-    }
-
-    .features-list {
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -320,9 +360,10 @@
     }
 
     .features-list button {
+        text-align: center;
         background: none;
         border: none;
-        font-size: 1rem;
+        font-size: 24px;
         padding: 0.5rem 1rem;
         cursor: pointer;
         border-radius: 8px;
@@ -336,12 +377,11 @@
     .features-list button:hover, .features-list button.selected {
         background-color: #f7bfa5;
         color: #000;
-        font-weight: 300;
     }
 
     .feature-description {
         display: flex;
-        width: 400px;
+        width: 500px;
         min-height: 140px;
         transition: opacity 0.3s ease;
     }
@@ -369,10 +409,27 @@
         display: block;
     }
 
+    .banner2 {
+        width: 100vw;
+        height: 960px;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        overflow: hidden;
+    }
+
+    .banner2 img {
+        width: 100%;
+        height: 960px;
+        display: block;
+    }
+
     .pricing-content {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        gap: rem;
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
@@ -405,7 +462,7 @@
         box-shadow: 0 0 5px 0px #e0f9f9;
         text-decoration: none;
         color: #2d3e50;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.2s ease;
     }
 
     .pricing-card:hover {
@@ -438,5 +495,98 @@
         font-size: 22px;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
+    }
+
+    .enterprise-content {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: left;
+        align-items: flex-start;
+        min-height: 250px;
+    }
+
+    .enterprise-content a {
+        text-decoration: none;
+    }
+
+    .enterprise-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: left;
+    }
+
+    .enterprise-card {
+        border-radius: 10px;
+        background: #e0f9f9;
+        padding: 2rem;
+        width: 1275px;
+        height: 167px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        box-shadow: 0 0 5px 0px #e0f9f9;
+        text-decoration: none;
+        color: #2d3e50;
+        transition: transform 0.2s ease;
+    }
+
+    .enterprise-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        font-weight: bolder;
+    }
+
+    .enterprise-card h3 {
+        font-size: 29px;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .legal-footer {
+        background-color: #1a1a1a;
+        color: #ccc;
+        padding: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .legal-footer {
+        background: linear-gradient(#4a5e6e, #364552);
+        color: #ccc;
+        padding: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .footer-container {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+        color: #fff;
     }
 </style>
